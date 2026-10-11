@@ -1,0 +1,35 @@
+.hero-shell{background:linear-gradient(65deg,#454494 0%,#225ea1 45%,#1965a3 100%)}.hero{position:relative;isolation:isolate;text-align:center;color:white;padding:38px 24px 130px;overflow:hidden}.hero:after{content:"";position:absolute;z-index:-1;inset:auto 0 0;height:110px;background:url('/assets/pattern.png') center bottom/100% 100% no-repeat;opacity:.65}.hero h1{font-size:clamp(34px,4vw,56px);font-weight:400;line-height:1.22;margin:0 0 32px}.intro{font-size:14px;line-height:1.65;margin:0 0 34px}.email-form{display:flex;gap:8px;max-width:425px;margin:auto;padding:7px;background:#ffffff24;border-radius:10px}.email-form input{min-width:0;flex:1;border:0;background:transparent;color:#fff;padding:12px 15px;font:inherit;font-size:13px}.email-form input::placeholder{color:#d2e3f2}.email-form button{border:0;border-radius:7px;background:linear-gradient(100deg,#30b5af,#b6ce41);color:#10232e;padding:12px 32px;cursor:pointer;white-space:nowrap}.email-form button:hover{filter:brightness(1.1)}.form-status{min-height:22px;font-size:13px;margin:10px auto 28px}.arabic-hero h2{font-size:23px;margin:0 0 8px}.arabic-hero p{font-size:16px;margin:0;line-height:1.7}.content-panel{background:var(--surface);border-radius:40px 40px 0 0;overflow:hidden}.about{display:grid;grid-template-columns:1fr 1fr;gap:8%;padding-top:100px;padding-bottom:34px}.eyebrow{font-size:12px}.about h2{font-size:24px;color:#0867b9;font-weight:600;margin:8px 0 30px;line-height:1.35}.about p{font-size:16px;line-height:1.5;margin:0 0 18px}.about [lang=ar] p{line-height:1.8}.resources{border-top:1px solid var(--line);padding:42px 0}.resource-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px 40px}.resource-grid h2{font-size:16px;font-weight:400;margin:0 0 16px}.resource-card{display:block;overflow:hidden;transition:transform .2s,box-shadow .2s}.resource-card img{display:block;width:100%;height:auto}.resource-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px #16365025}@media(max-width:760px){.hero{padding-top:35px;padding-bottom:95px}.about{grid-template-columns:1fr;gap:28px;padding-top:45px}.about h2{font-size:22px;margin-bottom:20px}.resource-grid{gap:30px;grid-template-columns:1fr}.hero h1{font-size:36px}.intro{font-size:13px}.desktop-break{display:none}.arabic-hero h2{font-size:21px}.arabic-hero p{font-size:14px}.content-panel{border-radius:28px 28px 0 0}.email-form button{padding:12px 20px}}@media(prefers-reduced-motion:reduce){.resource-card{transition:none}}
+
+.hero h1{font-weight:300}.about{font-family:"ExpoArabic",Arial,sans-serif;font-weight:300}.about h2{font-weight:500}.eyebrow{font-family:"MontserratArabic",Arial,sans-serif}.about [lang=ar] .eyebrow{font-family:"ExpoArabic",Arial,sans-serif}.resource-grid{font-family:"ExpoArabic",Arial,sans-serif}.arabic-hero h2{font-family:"MontserratArabic",Arial,sans-serif;font-weight:700}.email-form button:disabled{opacity:.65;cursor:wait}.form-status{max-width:440px}.contact-note{font-size:11px;margin:8px auto 0;color:#eef5ff}
+
+/* Shared rows keep corresponding English/Arabic text aligned as either wraps. */
+.about {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(16px, 5vw, 80px);
+  row-gap: 0;
+  align-items: start;
+}
+.about > article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 5;
+  min-width: 0;
+}
+.about .eyebrow { display: block; margin: 0 0 8px; }
+.about h2 {
+  margin: 0 0 clamp(20px, 2.5vw, 36px);
+  font-size: clamp(16px, 1.65vw, 24px);
+  overflow-wrap: anywhere;
+}
+.about p {
+  margin: 0 0 clamp(18px, 2vw, 28px);
+  font-size: clamp(13px, 1.15vw, 16px);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.about [lang=ar] p { line-height: 1.7; }
+.about p:last-child { margin-bottom: 0; }
+@media (max-width: 760px) {
+  .about { width: 92%; padding-top: 40px; padding-bottom: 32px; }
+  .about .eyebrow { font-size: 10px; }
+}
