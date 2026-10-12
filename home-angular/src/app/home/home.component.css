@@ -33,3 +33,25 @@
   .about { width: 92%; padding-top: 40px; padding-bottom: 32px; }
   .about .eyebrow { font-size: 10px; }
 }
+
+.contact-actions {
+  margin: 0 auto 34px;
+}
+
+.contact-btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 0;
+  border-radius: 7px;
+  background: linear-gradient(100deg, #30b5af, #b6ce41);
+  color: #10232e;
+  padding: 12px 32px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: filter 0.2s;
+}
+
+.contact-btn:hover {
+  filter: brightness(1.1);
+}

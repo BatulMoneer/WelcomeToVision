@@ -3,11 +3,12 @@
 <main id="main"><section class="hero" aria-labelledby="hero-title">
 <h1 id="hero-title">Let’s Build<br>Your Next Success Story</h1>
 <p class="intro">We transform ideas into impactful experiences through innovative<br class="desktop-break"> design, precise execution, and a commitment to excellence</p>
-<form #contactForm="ngForm" (ngSubmit)="contact(contactForm)" class="email-form">
-<label class="sr-only" for="work-email">Your work email</label>
-<input id="work-email" name="email" type="email" required email [(ngModel)]="email" #emailField="ngModel" placeholder="Enter your work E-mail" autocomplete="email" aria-describedby="email-status" [attr.aria-invalid]="emailField.invalid && (emailField.touched || contactForm.submitted)">
-<input class="sr-only" name="website" [(ngModel)]="website" tabindex="-1" autocomplete="off" aria-hidden="true"><button type="submit" [disabled]="sending">{{ sending ? "Sending…" : "Contact us" }}</button></form><p class="contact-note">By clicking Contact us, you agree to be contacted about your interest.</p>
-<p id="email-status" class="form-status" aria-live="polite"><span *ngIf="emailField.invalid && (emailField.touched || contactForm.submitted)">Please enter a valid email address.</span><span>{{ status }}</span></p>
+
+<!-- DIRECT BUTTON ONLY -->
+<div class="contact-actions">
+  <a href="mailto:info@tovision.sa?subject=Inquiry%20from%20Website" class="contact-btn">Contact us</a>
+</div>
+
 <div class="arabic-hero" lang="ar" dir="rtl"><h2>لنبنِ معاً قصة نجاحك القادمة</h2><p>نحوّل الأفكار إلى تجارب مؤثرة من خلال التصميم المبتكر، والتنفيذ الدقيق، والالتزام التام بالتميّز</p></div>
 </section>
 <div class="content-panel"><section class="about content-width" aria-label="About ToVision">
