@@ -3,7 +3,7 @@ export async function onRequestPost(context) {
     const body = await context.request.json();
     const { email, website } = body;
 
-    // Basic validation (and optional honeypot check for 'website')
+    // Basic validation & honeypot check (website should be empty)
     if (!email || website) {
       return new Response(JSON.stringify({ error: 'Invalid request' }), {
         status: 400,
@@ -11,7 +11,24 @@ export async function onRequestPost(context) {
       });
     }
 
-    // TODO: Forward to your email service, database, or CRM (e.g., SendGrid, Resend, etc.)
+    // Call Resend API to send the email
+    const resendResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${context.env.RESEND_API_KEY}`
+      },
+      body: JSON.stringify({
+        from: 'To Vision Website <info@tovision.sa>',
+        to: ['info@tovision.sa'],
+        subject: 'New Interest Form Submission',
+        html: `<p>You have a new interest submission from: <strong>${email}</strong></p>`
+      })
+    });
+
+    if (!resendResponse.ok) {
+      throw new Error('Failed to send email');
+    }
 
     return new Response(JSON.stringify({ message: 'Success' }), {
       status: 200,
